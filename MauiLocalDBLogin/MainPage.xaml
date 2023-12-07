@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLocalDBLogin.MainPage" Title="Advance Login Form">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <Entry Placeholder="User Id" TextColor="Black" x:Name="UName"></Entry>
+                <Entry Placeholder="Password" TextColor="Black" x:Name="Password" IsPassword="True"></Entry>
+                <Button Text="Login" HorizontalOptions="FillAndExpand" 
+          TextColor="White" Margin="0,10,0,0" Clicked="SaveBtn_Clicked" x:Name="SaveBtn"></Button>
+                <Button x:Name="btnRegistration" Text="Registration" HorizontalOptions="FillAndExpand"
+          BackgroundColor="Orange" TextColor="Black" Clicked="BtnRegistration_Clicked"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

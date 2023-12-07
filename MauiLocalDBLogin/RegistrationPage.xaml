@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLocalDBLogin.RegistrationPage"
+             Title="Registration">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+
+                <Button x:Name="BtnCapture" Text="Capture" Clicked="BtnCapture_Clicked"></Button>
+                
+                <Button x:Name="BtnBrowse" Text="Browse" Clicked="BtnBrowse_Clicked"></Button>
+
+                <Image x:Name="myImage" HeightRequest="250" WidthRequest="250" Source="man.png"></Image>
+
+                <Label Text="Fill All Information" FontSize="Small" FontAttributes="Bold"></Label>
+
+                <Entry Placeholder="Name" TextColor="Black" x:Name="Name"></Entry>
+
+                <DatePicker x:Name="dp" MaximumDate="2050/01/01" MinimumDate="1925/01/01" Format="dd/MM/yyyy"></DatePicker>
+
+                <Entry Placeholder="Place of birth" TextColor="Black" x:Name="Place"></Entry>
+
+                <Entry Placeholder="Email-Id"  Keyboard="Email" TextColor="Black" x:Name="Email"></Entry>
+
+                <Entry Placeholder="User Id" TextColor="Black" x:Name="UserId"></Entry>
+
+                <Entry Placeholder="Password" TextColor="Black" x:Name="Password" IsPassword="True"></Entry>
+
+                <Button Text="Register" HorizontalOptions="FillAndExpand" 
+                    
+            BackgroundColor="Maroon" TextColor="White" Margin="0,10,0,0" Clicked="SaveBtn_Clicked" x:Name="SaveBtn"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
