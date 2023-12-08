@@ -102,15 +102,15 @@ public partial class RegistrationPage : ContentPage
                 Password.Focus();
                 return;
             }
-            if (SaveBtn.Text == "Save")
-            {
-                UserDetails.Name = Name.Text;
-                UserDetails.DOB = Convert.ToDateTime(dp.Date.ToString());
-                UserDetails.POB = Place.Text;
-                UserDetails.Email = Email.Text;
-                UserDetails.UserId = UserId.Text;
-                UserDetails.Password = Password.Text;
+            UserDetails.Name = Name.Text;
+            UserDetails.DOB = Convert.ToDateTime(dp.Date.ToString());
+            UserDetails.POB = Place.Text;
+            UserDetails.Email = Email.Text;
+            UserDetails.UserId = UserId.Text;
+            UserDetails.Password = Password.Text;
 
+            if (SaveBtn.Text == "Save")
+            { 
                 SQLite_Android Obj = new SQLite_Android();
                 bool response = Obj.SaveUser(UserDetails);
                 if (response)
@@ -125,13 +125,6 @@ public partial class RegistrationPage : ContentPage
             }
             else
             {
-                UserDetails.Name = Name.Text;
-                UserDetails.DOB = dp.Date;
-                UserDetails.POB = Place.Text;
-                UserDetails.Email = Email.Text;
-                UserDetails.UserId = UserId.Text;
-                UserDetails.Password = Password.Text;
-
                 SQLite_Android Obj = new SQLite_Android();
                 bool response = Obj.UpdateUser(UserDetails);
                 if (response)
