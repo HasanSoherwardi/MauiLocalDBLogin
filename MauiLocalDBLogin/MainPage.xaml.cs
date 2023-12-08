@@ -2,8 +2,6 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
@@ -28,7 +26,7 @@
             UserDetails.Password = Password.Text;
 
             SQLite_Android Obj = new SQLite_Android();
-            var res = Obj.GetUser(UserDetails);
+            var res = Obj.GetUserLogin(UserDetails);
             if (res != null)
             {
                 UserDetails = res;
@@ -40,14 +38,11 @@
             {
                await DisplayAlert("Error", "Invalid Credentials", "OK");
             }
-
         }
-
 
         private async void BtnRegistration_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new RegistrationPage(null));
         }
     }
-
 }

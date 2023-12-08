@@ -17,7 +17,7 @@ namespace MauiLocalDBLogin
             database = new SQLiteConnection(DbConnection.DBPath, DbConnection.flags);
             database.CreateTable<User>();
         }
-        public bool DeleteEmployee(int id)
+        public bool DeleteUser(int id)
         {
             bool res = false;
             try
@@ -34,38 +34,17 @@ namespace MauiLocalDBLogin
             
         }
 
-        public List<User> GetEmployees(User user)
+        public List<User> GetUsers(User user)
         {
             string sql = $"Select * from User Where UserId ='{user.UserId}' and password='{user.Password}'";
             List<User> employees = database.Query<User>(sql);
             return employees;
         }
 
-        public User GetUser(User user)
+        public User GetUserLogin(User user)
         {
-            //bool res = false;
             try
             {
-                //     string sql = $"Select * from User Where UserId='{user.UserId}' and Password='{user.Password}'";
-                //    int temp = database.Execute(sql);
-
-
-                //    if (temp >= 0)
-                //    {
-                //        res = true;
-                //    }
-                //    //database.Update(user);
-                //    else
-                //    {
-                //        res = false;
-                //    }
-
-                //}
-                //catch (Exception ex)
-                //{
-                //    res = false;
-                //}
-
                 return database.Table<User>().Where(x => x.UserId == user.UserId && x.Password == user.Password).SingleOrDefault();
 
             }
@@ -75,7 +54,7 @@ namespace MauiLocalDBLogin
             }
         }
 
-        public bool SaveEmployee(User user)
+        public bool SaveUser(User user)
         {
             bool res = false;
             try
@@ -90,7 +69,7 @@ namespace MauiLocalDBLogin
             return res;
         }
 
-        public bool UpdateEmployee(User user)
+        public bool UpdateUser(User user)
         {
             bool res = false;
             try

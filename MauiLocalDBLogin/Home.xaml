@@ -27,7 +27,7 @@
             <ScrollView>
                 <StackLayout Padding="2">
                     
-                    <ListView x:Name="EmployeeList" SelectionMode="Single" HasUnevenRows="True" ItemTapped="EmployeeList_ItemTapped"
+                    <ListView x:Name="EmployeeList" SelectionMode="Single" HasUnevenRows="True" 
                               IsPullToRefreshEnabled="True" Refreshing="EmployeeList_Refreshing">
                         <ListView.ItemTemplate>
                             <DataTemplate>

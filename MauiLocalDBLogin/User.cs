@@ -18,6 +18,7 @@ namespace MauiLocalDBLogin
         [NotNull]
         public string Email { get; set; }
         [NotNull]
+        [Unique]
         public string UserId { get; set; }
         [NotNull]
         public string Password { get; set; }
