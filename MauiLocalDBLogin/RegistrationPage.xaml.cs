@@ -116,7 +116,7 @@ public partial class RegistrationPage : ContentPage
                 if (response)
                 {
                     await DisplayAlert("Saved", "Save Successfully.", "OK");
-                    await Navigation.PopModalAsync();
+                    await Navigation.PopAsync();
                 }
                 else
                 {
@@ -131,7 +131,7 @@ public partial class RegistrationPage : ContentPage
                 {
                     MessagingCenter.Send<User>(UserDetails,  "ReciveData");
                     await DisplayAlert("Updated", "Update Successfully.", "OK");
-                    await Navigation.PopModalAsync();
+                    await Navigation.PopAsync();
                 }
                 else
                 {

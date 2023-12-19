@@ -31,7 +31,7 @@
             {
                 UserDetails = res;
                 await DisplayAlert("Welcome", "Login Successfully.", "OK");
-               await Navigation.PushModalAsync(new Home(UserDetails));
+               await Navigation.PushAsync(new Home(UserDetails));
 
             }
             else
@@ -42,7 +42,7 @@
 
         private async void BtnRegistration_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new RegistrationPage(null));
+            await Navigation.PushAsync(new RegistrationPage(null));
         }
     }
 }

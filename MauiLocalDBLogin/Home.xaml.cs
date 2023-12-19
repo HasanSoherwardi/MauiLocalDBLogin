@@ -33,7 +33,7 @@ public partial class Home
         User user = (((Button)sender).CommandParameter) as User;
         if (user != null)
         {
-            await Navigation.PushModalAsync(new RegistrationPage(user));
+            await Navigation.PushAsync(new RegistrationPage(user));
 
             MessagingCenter.Unsubscribe<User>(this, "ReciveData");
             MessagingCenter.Subscribe<User>(this, "ReciveData", (value) =>
@@ -59,7 +59,7 @@ public partial class Home
                 if (response)
                 {
                     await DisplayAlert("Deleted", "Deleted Successfully.", "OK");
-                    await Navigation.PopModalAsync();
+                    await Navigation.PopAsync();
                 }
                 else
                 {
